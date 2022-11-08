@@ -1,0 +1,26 @@
+<main>
+  <section class="barra">
+    <form action="#" [formGroup]="filmesForm"  (ngSubmit)="pesquisar()">
+      <mat-form-field>
+        <mat-label appearance="outline">Nome do Filme</mat-label>
+        <input type="text"matInput placeholder="Ex: Matrix" formControlName="title">
+      </mat-form-field>
+      <button mat-flat-button color="accent" matTooltip="Pesquisar" [disabled]="filmesForm.invalid">
+        <mat-icon>search</mat-icon>
+      </button>
+    </form>
+  </section>
+
+  <section class="card-filmes">
+    <div class="filmes" *ngFor="let FilmesData of filmesNovos.results">
+      <img class="poster" [src]="'https://image.tmdb.org/t/p/original/'+FilmesData.poster_path" alt="">
+      <h1>Título: {{FilmesData.title}}</h1>
+      <h3>Data de lançamento: {{FilmesData.release_date}}</h3>
+      <h3>Popularidade: {{FilmesData.popularity}}</h3>
+      <h3>Nota: {{FilmesData.vote_average}}</h3>
+      <h3>Total de votos: {{FilmesData.vote_count}}</h3>
+    </div>
+  </section>
+
+</main>
+

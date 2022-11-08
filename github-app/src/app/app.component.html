@@ -1,0 +1,30 @@
+<main class="container">
+  <section *ngIf="gUser == undefined" class="search">
+    <img src="/assets/github.svg" alt="Github">
+    <form action="#" id="search-form" [formGroup]="githubForm" (ngSubmit)="procurar()">
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input type="text" matInput placeholder="Ex: frogs123" formControlName="username">
+      </mat-form-field>
+      <button mat-flat-button color="accent" matTooltip="Procurar Usuário" [disabled]="githubForm.invalid">
+        <mat-icon>search</mat-icon>
+      </button>
+    </form>
+  </section>
+  <section *ngIf="gUser != undefined">
+    <div class="card-informacoes"> 
+      <!-- <img *ngIf="gUser != undefined" [src]="gUser.avatar_url"> -->
+      <img src="{{ gUser.avatar_url }}" class="img-avatar" alt="" width="200px">
+      <h1 class="h1" >{{ gUser.name }}</h1>
+      <h2 class="h2" >{{ gUser.login }}</h2>
+      <p ><strong>Email:</strong> {{ gUser.email }}</p>
+      <p><strong>Localização:</strong> {{ gUser.location }}</p>
+      
+      <div class="card-followers">
+        <p><strong>{{ gUser.followers }}</strong> Followers</p>
+        <p><strong>{{ gUser.following }}</strong> Following</p>
+      </div>
+     </div>
+  </section>
+</main>
+

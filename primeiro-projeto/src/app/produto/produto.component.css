@@ -1,0 +1,40 @@
+section{
+    padding-bottom: 0;
+    width: 300px;
+    background-color: whitesmoke;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.imgtenis{
+    width: 230px; 
+    margin-top: 15px;
+}
+
+h2{
+    text-align: center;
+    font-size: 15px;
+}
+
+p{
+    text-align: center;
+    font-size: 13px;
+}
+
+.btn-addcart{
+    background-color: rgb(209, 57, 57);
+    height: 45px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-weight: 500;
+}
+
+.btn-addcart:hover{
+    background-color: red;
+}

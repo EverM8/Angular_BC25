@@ -1,0 +1,77 @@
+<div class="cartao">
+
+<section class="section">
+    <div class="cartao-frente">
+        <label for="">Numero do Cartão</label> 
+        <h1>{{numeroCartao}}</h1> 
+        <div class="rodape">
+            <label for=""><strong>Nome</strong> </label>
+            <p class="nome">{{nomeSobrenome}}</p>
+            <label for=""><strong>Validade</strong> </label>
+            <p>{{mes}}/{{ano}}</p>
+        </div>
+    </div>
+
+    <div class="cartao-tras">
+        <div class="faixa"></div>
+        <div class="nseguranca">
+            <P class="numero">CVV {{codigo}}</P>
+        </div>
+    </div>
+</section>
+
+
+<div class="formulario">
+    <form action="">
+        <label for="">Numero do Cartão</label> 
+    <input type="text" placeholder="Digite o numero do cartão" [(ngModel)]="numeroCartao"> 
+
+    <label for=""><strong>Nome</strong> </label>
+    <input type="text" placeholder="Digite o seu nome" [(ngModel)]="nomeSobrenome"> 
+    
+    <label for=""><strong>Validade</strong> </label>
+    Mês
+    <input type="text" placeholder="Informe a validade" [(ngModel)]="mes"> 
+    Ano
+    <input type="text" placeholder="Informe a validade" [(ngModel)]="ano"> 
+
+    <label for=""><strong>Validade</strong> </label>
+    <input type="number" placeholder="Codigo de segurança" [(ngModel)]="codigo"> 
+    </form>
+    
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="wrapper">
+  <div class="credit-card-front">
+    <div class="credit-card-logo">
+      <img src="/assets/mastercard.svg" alt="Mastercard Logo">
+    </div>
+    <div class="credit-card-number">
+      <strong>{{ dadosCartao.numero || '0000 0000 0000 0000' }}</strong>
+    </div>
+    <div class="credit-card-data">
+      <p class="name">
+        {{ dadosCartao.nome || 'Vitor Castro' }}
+      </p>
+      <strong class="expiration-date">
+        {{ dadosCartao.mes || '00' }}/{{ dadosCartao.ano || '00'}}
+      </strong>
+    </div>
+  </div>
+
+  <div class="credit-card-back">
+    <div class="line"></div>
+    <div class="cvc">
+      <strong>{{ dadosCartao.cvc || '000'}}</strong>
+    </div>
+  </div>
+</div>
+ 
